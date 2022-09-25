@@ -1,0 +1,48 @@
+.home-nav {
+  z-index: 50;
+  height: 60px;
+}
+
+.logo {
+  font-family: sans-serif;
+  font-size: 25px;
+  line-height: 80%;
+  white-space: nowrap;
+  font-weight: bolder;
+  margin-right: 50px;
+  color: aliceblue;
+}
+
+.home-image {
+  height: 100vh;
+  /* margin-top: -45px; */
+  background: url("../../../../public/homepage.jpg") center no-repeat;
+  z-index: 0;
+}
+
+.solid {
+  background: rgb(30, 33, 41, 0.95);
+  transition: background-color 1s ease 0s;
+}
+
+.nav-link {
+  font-size: 12px;
+  margin-right: 10px;
+  font-weight: 500;
+  color: white;
+}
+
+.main-heading {
+  font-family: sans-serif;
+  padding-top: 25%;
+}
+
+.admin-nav-main {
+  background: rgb(30, 33, 41);
+  height: 60px;
+}
+
+.admin-nav {
+  background-color: rgb(64, 64, 98);
+  height: 30px;
+}
