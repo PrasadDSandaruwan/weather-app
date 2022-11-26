@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../common/SVG/footerLogo";
 import "./css/HomeNavbar.css";
+import { Typewriter } from "react-simple-typewriter";
 
 const HomeNavbar = (props) => {
   const [colorChange, setColorchange] = useState(false);
@@ -56,7 +57,25 @@ const HomeNavbar = (props) => {
         </div>
       </nav>
       <div className="home-image">
-        <h1 className="text-white text-center main-heading">Weather Spark</h1>
+        <h1 className="text-white text-center main-heading logo-text">
+          Weather Spark
+        </h1>
+        <div className="text-center ">
+          <div className="tw-text-main">We Provide</div>
+          <span className="tw-text">
+            <Typewriter
+              loop
+              typespeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+              words={[
+                "Weather Data Analyzing",
+                "Weather Forecasting",
+                "Weather Data",
+              ]}
+            />
+          </span>
+        </div>
       </div>
     </React.Fragment>
   );
