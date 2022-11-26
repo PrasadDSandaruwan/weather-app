@@ -1,0 +1,9 @@
+.yrmonchart{
+    /* width: 1500px; */
+    max-width: 500px;
+    overflow-x: scroll;
+}
+
+.yrmonchartbody{
+    height: 500px;
+}

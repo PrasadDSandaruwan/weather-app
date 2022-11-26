@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
 import Login from "./components/common/login";
 import SignUp from "./components/common/signup";
-import Home from "./components/pages/Home";
+import Home from "./components/Home";
+import Dashboard from "./components/dashboard/dashboard";
+
 // import HomeNavbar from "./components/navbar/HomeNavbar";
 // import RoutesMap from "./components/common/RoutesMap";
 // import Admin from "./layouts/Admin";
@@ -44,6 +46,7 @@ export class AppRoutes extends Component {
           <Route path="/register" element={<SignUp />} />
           <Route path="/auth" element={<Login />} />
           <Route path="/" element={<Home></Home>}></Route>
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     );
