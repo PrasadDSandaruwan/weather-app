@@ -2,7 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 // import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
-import HomeNavbar from "../navbar/HomeNavbar";
+// import HomeNavbar from "../navbar/HomeNavbar";
+import User from "../../layouts/User";
 import MainCard from "./MainCard";
 
 import {
@@ -25,6 +26,7 @@ import OtherDecomChart from "./otherdecomchart";
 
 import RelativeHumidityYearMonthAverageChart from "./yearmonthavg/relhumyearmonthavg";
 import WindSpeedYearMonthAverageChart from "./yearmonthavg/windspeedyearmonthavg";
+
 import SummerHourlyAvgTempChart from "./summergraphs/summerhrtemp";
 import AutumnHourlyAvgTempChart from "./autumngraphs/autumnhrtemp";
 import WinterHourlyAvgTempChart from "./wintergraphs/winterhrtemp";
@@ -36,6 +38,9 @@ import AutumnHourlyAvgSolarChart from "./autumngraphs/autumnhrsolar";
 import SpringHourlyAvgSolarChart from "./springgraphs/springhrsolar";
 
 import SummerDayTemperatureChart from "./summergraphs/summerdaytemp";
+import WinterDayTemperatureChart from "./wintergraphs/winterdaytemp";
+import SpringDayTemperatureChart from "./springgraphs/springdaytemp";
+import AutumnDayTemperatureChart from "./autumngraphs/autumndaytemp";
 
 // import {
 //   GiftOutlined,
@@ -69,26 +74,116 @@ function DashboardContent() {
 
   return (
     <>
+      <User />
+      <Box component="main" sx={{ flex: 1, py: 6, px: 4, pt: 3, pb: 3 }}>
+        <Typography
+          component="h3"
+          variant="h3"
+          // marginBottom={3}
+          marginTop={10}
+          align="center"
+          color="text.primary"
+        >
+          Four Season Analysis
+        </Typography>
+        <Grid item spacing={20}>
+                  <Stack direction="row" alignItems="center" spacing={5}>
+                    <Button
+                      size="small"
+                      onClick={() => setYear("2016")}
+                      color={year === "2016" ? "primary" : "secondary"}
+                      variant={year === "2016" ? "outlined" : "text"}
+                    >
+                      2016
+                    </Button>
+                    <Button
+                      size="small"
+                      onClick={() => setYear("2017")}
+                      color={year === "2017" ? "primary" : "secondary"}
+                      variant={year === "2017" ? "outlined" : "text"}
+                    >
+                      2017
+                    </Button>
+                    <Button
+                      size="small"
+                      onClick={() => setYear("2018")}
+                      color={year === "2018" ? "primary" : "secondary"}
+                      variant={year === "2018" ? "outlined" : "text"}
+                    >
+                      2018
+                    </Button>
+                    <Button
+                      size="small"
+                      onClick={() => setYear("2019")}
+                      color={year === "2019" ? "primary" : "secondary"}
+                      variant={year === "2019" ? "outlined" : "text"}
+                    >
+                      2019
+                    </Button>
+                    <Button
+                      size="small"
+                      onClick={() => setYear("2020")}
+                      color={year === "2020" ? "primary" : "secondary"}
+                      variant={year === "2020" ? "outlined" : "text"}
+                    >
+                      2020
+                    </Button>
+                  </Stack>
+                </Grid>
+        <Stack
+          direction="row"
+          alignItems="center"
+        >
+          <Grid style={{ width: '200px' }} item sx={{ mx: "auto" }}>
+            <Grid item xs={12} md={7} lg={8}>
+              <Grid container alignItems="center" justifyContent="space-between">
+                <Grid item>
+                  <Typography >Average Hourly Solar Radiation on a Day in {year} Summer</Typography>
+                </Grid>
+                
+              </Grid>
+              <MainCard content={false} sx={{ mt: 1.5 }} style={{width:"400px", height: "400px"}}>
+                <SummerHourlyAvgSolarChart year={year} />
+                {console.log(year)}
+              </MainCard>
+            </Grid>
+          </Grid>
 
-      {/* <HomeNavbar /> */}
+          <Grid item sx={{ mx: "auto" }}>
+            <Grid item xs={12} md={7} lg={8}>
+              <Grid container alignItems="center" justifyContent="space-between">
+                <Grid item>
+                  <Typography >Average Hourly Temperature on a Day in {year} Summer</Typography>
+                </Grid>
+              </Grid>
+              <MainCard content={false} sx={{ mt: 1.5 }} style={{width:"400px", height: "400px"}}>
+                <SummerHourlyAvgTempChart year={year} />
+                {console.log(year)}
+              </MainCard>
+            </Grid>
+          </Grid>
+
+          <Grid item sx={{ mx: "auto" }}>
+            <Grid item xs={12} md={7} lg={8}>
+              <Grid container alignItems="center" justifyContent="space-between">
+                <Grid item>
+                  <Typography >Average, Minimum and Maximum Daily Temperatures in {year} Summer</Typography> 
+                  {/* variant="h5" */}
+                </Grid>
+              </Grid>
+              <MainCard content={false} sx={{ mt: 1.5 }} style={{width:"600px", height: "400px"}}>
+                <SummerDayTemperatureChart year={year} />
+                {console.log(year)}
+              </MainCard>
+            </Grid>
+          </Grid>
+
+          
+        </Stack>
+
+      </Box>
+
       {/* <Container> */}
-      <Grid container justify="space-around" rowSpacing={5.5} columnSpacing={40} paddingBottom={5} paddingLeft={5}>
-        {/* row 1 */}
-        <Grid item xs={12} sx={{ mb: -2.25, mt: 4 }} rowSpacing={6.5} paddingLeft={2}>
-          <Typography variant="h5">Today Overview:</Typography>
-        </Grid>
-        <Grid item xs={6} sm={3} md={2} lg={2} >
-
-        </Grid>
-        <Grid item xs={6} sm={3} md={2} lg={2}>
-
-        </Grid>
-        <Grid item xs={6} sm={3} md={2} lg={2}>
-
-        </Grid>
-        <Grid item xs={6} sm={3} md={2} lg={2} spacing={2}>
-        </Grid>
-      </Grid>
 
 
       <Grid container rowSpacing={5} columnSpacing={5} paddingBottom={5} paddingLeft={5}>
@@ -205,10 +300,10 @@ function DashboardContent() {
         </Grid>
 
         {/* row 4 */}
-        <Grid item xs={12} md={7} lg={8}>
+        {/* <Grid item xs={12} md={7} lg={8}>
           <Grid container alignItems="center" justifyContent="space-between">
             <Grid item>
-              <Typography variant="h5">Average, Minimum and Maximum Daily Temperatures in {year} Summer</Typography> 
+              <Typography variant="h5">Average, Minimum and Maximum Daily Temperatures in {year} Summer</Typography>
             </Grid>
             <Grid item spacing={20}>
               <Stack direction="row" alignItems="center" spacing={5}>
@@ -256,10 +351,10 @@ function DashboardContent() {
             </Grid>
           </Grid>
           <MainCard content={false} sx={{ mt: 1.5 }} style={{ width: '75rem' }}>
-            <SummerDayTemperatureChart year={year} />
+            <AutumnDayTemperatureChart year={year} />
             {console.log(year)}
           </MainCard>
-        </Grid>
+        </Grid> */}
 
         {/* row 5 */}
         <Grid item xs={12} md={7} lg={8}>
@@ -324,7 +419,7 @@ function DashboardContent() {
             {console.log(variable)}
             {/* <YearMonthAverageChart variable={variable} /> */}
 
-            <GraphSelect feature={variable}/>
+            <GraphSelect feature={variable} />
           </MainCard>
         </Grid>
 
@@ -418,7 +513,7 @@ function DashboardContent() {
   );
 }
 
-function GraphSelect({feature}) {
+function GraphSelect({ feature }) {
   console.log("Temp")
 
   switch (feature) {

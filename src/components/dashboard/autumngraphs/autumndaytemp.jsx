@@ -32,7 +32,9 @@ ChartJS.register(
 );
 
 var monthdate = []
-var outlier = []
+var outliermin = []
+var outliermax = []
+
 var temp2016avg = []
 var temp2017avg = []
 var temp2018avg = []
@@ -51,9 +53,10 @@ var temp2018max = []
 var temp2019max = []
 var temp2020max = [] 
 
-d3.csv("/summerdaytemp.csv",function(data1){
+d3.csv("/autumndaytemp.csv",function(data1){
     monthdate.push(data1.monthdate)
-    outlier.push(data1.outlier)
+    outliermin.push(data1.outliermin)
+    outliermax.push(data1.outliermax)
 
     temp2016avg.push(data1.yr2016avg)
     temp2017avg.push(data1.yr2017avg)
@@ -75,7 +78,7 @@ d3.csv("/summerdaytemp.csv",function(data1){
     
 });
 
-const SummerDayTemperatureChart = (props) => {
+const AutumnDayTemperatureChart = (props) => {
   const [hour_avg_data, set_hour_avg_data] =
     useState({ datasets: [] });
   const [hour_avg_options, set_hour_avg_options] =
@@ -113,8 +116,18 @@ const SummerDayTemperatureChart = (props) => {
             // backgroundColor: "rgba(255, 48, 71, 0.9)",
             pointRadius: [0],
             pointHitRadius: [0],
-            data: outlier,
-            label: "Outlier indicator"
+            data: outliermin,
+            label: "3.38"
+          },
+          {
+            fill: false, //for area chart
+            borderColor: "rgba(0, 0, 0, 0.9)",
+            borderWidth: 3,
+            // backgroundColor: "rgba(255, 48, 71, 0.9)",
+            pointRadius: [0],
+            pointHitRadius: [0],
+            data: outliermax,
+            label: "26.78"
           },
           {
             fill: true, //for area chart
@@ -152,7 +165,7 @@ const SummerDayTemperatureChart = (props) => {
 
         // title: {
         //   display: true,
-        //   text: "Hourly Average Temperature on a Winter Day in ",
+        //   text: "Hourly Average Temperature on a Autumn Day in ",
         //   position: "top",
         // },
 
@@ -200,8 +213,8 @@ const SummerDayTemperatureChart = (props) => {
             text: "Temperature in Degree Celcius",
             display: true
           },
-          max: 41,
-          min: 7,
+          max: 37,
+          min: 2,
         },
         // "left-y-axis": {
         //   position: "left",
@@ -236,14 +249,14 @@ const SummerDayTemperatureChart = (props) => {
   return (
 
     // <div class="yrmonchart">
-    // <div id="chartbody" class="yrmonchartbody">
+    <div id="chartbody" class="yrmonchartbody">
       <Line
         id="yrmonchart"
         type='bar'
         data={hour_avg_data}
         options={hour_avg_options}
       />
-    // </div>
+    </div>
 
 
     // </div>
@@ -253,4 +266,4 @@ const SummerDayTemperatureChart = (props) => {
   );
 };
 
-export default SummerDayTemperatureChart;
+export default AutumnDayTemperatureChart;
