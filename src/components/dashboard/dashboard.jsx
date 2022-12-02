@@ -86,50 +86,211 @@ function DashboardContent() {
         >
           Four Season Analysis
         </Typography>
+        <Grid
+          container
+          rowSpacing={1.5}
+          columnSpacing={5}
+          // paddingLeft={5}
+          paddingRight={2}
+          paddingBottom={5}
+        >
+          <Grid
+            item
+            md={8}
+            sx={{ display: { sm: "none", md: "block", lg: "none" } }}
+          />
+
+          {/* row 2 */}
+          <Grid item xs={12} md={12} lg={6}>
+            <Grid
+              container
+              alignItems="center"
+              justifyContent="space-between"
+            >
+              <Grid item>
+                <Typography
+                  component="h5"
+                  variant="h5"
+                  align="center"
+                  color="text.primary"
+                  paddingTop={5}
+                  gutterBottom
+                >
+                  Summer
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Stack direction="row" alignItems="center" spacing={1}>
+                  <Button
+                    size="small"
+                    onClick={() => setYear("2016")}
+                    color={year === "2016" ? "primary" : "secondary"}
+                    variant={year === "2016" ? "outlined" : "text"}
+                    style={{
+                      fontSize: 14,
+                      fontStyle: "bold",
+                      backgroundColor: "#0a0a23",
+                      color: "#fff",
+                      borderRadius: "10px",
+                      boxShadow: "0px 0px 2px 2px rgb(0,0,0)",
+                      transition: "0.25w",
+                    }}
+                  >
+                    2016
+                  </Button>
+                  <Button
+                    size="small"
+                    onClick={() => setYear("2017")}
+                    color={year === "2017" ? "primary" : "secondary"}
+                    variant={year === "2017" ? "outlined" : "text"}
+                    style={{
+                      fontSize: 14,
+                      fontStyle: "bold",
+                      backgroundColor: "#0a0a23",
+                      color: "#fff",
+                      borderRadius: "10px",
+                      boxShadow: "0px 0px 2px 2px rgb(0,0,0)",
+                      transition: "0.25w",
+                    }}
+                  >
+                    2017
+                  </Button>
+                  <Button
+                    size="small"
+                    onClick={() => setYear("2018")}
+                    color={year === "2018" ? "primary" : "secondary"}
+                    variant={year === "2018" ? "outlined" : "text"}
+                    style={{
+                      fontSize: 14,
+                      fontStyle: "bold",
+                      backgroundColor: "#0a0a23",
+                      color: "#fff",
+                      borderRadius: "10px",
+                      boxShadow: "0px 0px 2px 2px rgb(0,0,0)",
+                      transition: "0.25w",
+                    }}
+                  >
+                    2018
+                  </Button>
+                  <Button
+                    size="small"
+                    onClick={() => setYear("2019")}
+                    color={year === "2019" ? "primary" : "secondary"}
+                    variant={year === "2019" ? "outlined" : "text"}
+                    style={{
+                      fontSize: 14,
+                      fontStyle: "bold",
+                      backgroundColor: "#0a0a23",
+                      color: "#fff",
+                      borderRadius: "10px",
+                      boxShadow: "0px 0px 2px 2px rgb(0,0,0)",
+                      transition: "0.25w",
+                    }}
+                  >
+                    2019
+                  </Button>
+                  <Button
+                    size="small"
+                    onClick={() => setYear("2020")}
+                    color={year === "2020" ? "primary" : "secondary"}
+                    variant={year === "2020" ? "outlined" : "text"}
+                    style={{
+                      fontSize: 14,
+                      fontStyle: "bold",
+                      backgroundColor: "#0a0a23",
+                      color: "#fff",
+                      borderRadius: "10px",
+                      boxShadow: "0px 0px 2px 2px rgb(0,0,0)",
+                      transition: "0.25w",
+                    }}
+                  >
+                    2020
+                  </Button>
+                </Stack>
+              </Grid>
+            </Grid>
+            <Stack direction="row" alignItems="center" spacing={5}>
+              <Grid item>
+                <MainCard
+                  style={{ width: "400px", paddingRight: "1.5px" , height:"400px"}}
+                  content={false}
+                  sx={{ mt: 2.5 }}
+                >
+                  <SummerHourlyAvgSolarChart year={year} />
+                </MainCard>
+              </Grid>
+              <Grid item>
+                <MainCard
+                  style={{ width: "300px", paddingRight: "1.5px", height:"400px" }}
+                  content={false}
+                  sx={{ mt: 2.5 }}
+                >
+                  <SummerHourlyAvgTempChart year={year} />
+                </MainCard>
+              </Grid>
+
+              <Grid item>
+                <MainCard
+                  style={{ width: "550px", height:"400px" }}
+                  content={false}
+                  sx={{ mt: 2.5 }}
+                >
+                  <SummerDayTemperatureChart year={year} />
+                </MainCard>
+              </Grid>
+            </Stack>
+          </Grid>
+        </Grid>
+
+
+
+
+
+
         <Grid item spacing={20}>
-                  <Stack direction="row" alignItems="center" spacing={5}>
-                    <Button
-                      size="small"
-                      onClick={() => setYear("2016")}
-                      color={year === "2016" ? "primary" : "secondary"}
-                      variant={year === "2016" ? "outlined" : "text"}
-                    >
-                      2016
-                    </Button>
-                    <Button
-                      size="small"
-                      onClick={() => setYear("2017")}
-                      color={year === "2017" ? "primary" : "secondary"}
-                      variant={year === "2017" ? "outlined" : "text"}
-                    >
-                      2017
-                    </Button>
-                    <Button
-                      size="small"
-                      onClick={() => setYear("2018")}
-                      color={year === "2018" ? "primary" : "secondary"}
-                      variant={year === "2018" ? "outlined" : "text"}
-                    >
-                      2018
-                    </Button>
-                    <Button
-                      size="small"
-                      onClick={() => setYear("2019")}
-                      color={year === "2019" ? "primary" : "secondary"}
-                      variant={year === "2019" ? "outlined" : "text"}
-                    >
-                      2019
-                    </Button>
-                    <Button
-                      size="small"
-                      onClick={() => setYear("2020")}
-                      color={year === "2020" ? "primary" : "secondary"}
-                      variant={year === "2020" ? "outlined" : "text"}
-                    >
-                      2020
-                    </Button>
-                  </Stack>
-                </Grid>
+          <Stack direction="row" alignItems="center" spacing={5}>
+            <Button
+              size="small"
+              onClick={() => setYear("2016")}
+              color={year === "2016" ? "primary" : "secondary"}
+              variant={year === "2016" ? "outlined" : "text"}
+            >
+              2016
+            </Button>
+            <Button
+              size="small"
+              onClick={() => setYear("2017")}
+              color={year === "2017" ? "primary" : "secondary"}
+              variant={year === "2017" ? "outlined" : "text"}
+            >
+              2017
+            </Button>
+            <Button
+              size="small"
+              onClick={() => setYear("2018")}
+              color={year === "2018" ? "primary" : "secondary"}
+              variant={year === "2018" ? "outlined" : "text"}
+            >
+              2018
+            </Button>
+            <Button
+              size="small"
+              onClick={() => setYear("2019")}
+              color={year === "2019" ? "primary" : "secondary"}
+              variant={year === "2019" ? "outlined" : "text"}
+            >
+              2019
+            </Button>
+            <Button
+              size="small"
+              onClick={() => setYear("2020")}
+              color={year === "2020" ? "primary" : "secondary"}
+              variant={year === "2020" ? "outlined" : "text"}
+            >
+              2020
+            </Button>
+          </Stack>
+        </Grid>
         <Stack
           direction="row"
           alignItems="center"
@@ -140,9 +301,9 @@ function DashboardContent() {
                 <Grid item>
                   <Typography >Average Hourly Solar Radiation on a Day in {year} Summer</Typography>
                 </Grid>
-                
+
               </Grid>
-              <MainCard content={false} sx={{ mt: 1.5 }} style={{width:"400px", height: "400px"}}>
+              <MainCard content={false} sx={{ mt: 1.5 }} style={{ width: "400px", height: "400px", paddingRight: "20px" }}>
                 <SummerHourlyAvgSolarChart year={year} />
                 {console.log(year)}
               </MainCard>
@@ -156,7 +317,7 @@ function DashboardContent() {
                   <Typography >Average Hourly Temperature on a Day in {year} Summer</Typography>
                 </Grid>
               </Grid>
-              <MainCard content={false} sx={{ mt: 1.5 }} style={{width:"400px", height: "400px"}}>
+              <MainCard content={false} sx={{ mt: 1.5 }} style={{ width: "400px", height: "400px", paddingRight: "20px" }}>
                 <SummerHourlyAvgTempChart year={year} />
                 {console.log(year)}
               </MainCard>
@@ -167,18 +328,18 @@ function DashboardContent() {
             <Grid item xs={12} md={7} lg={8}>
               <Grid container alignItems="center" justifyContent="space-between">
                 <Grid item>
-                  <Typography >Average, Minimum and Maximum Daily Temperatures in {year} Summer</Typography> 
+                  <Typography >Average, Minimum and Maximum Daily Temperatures in {year} Summer</Typography>
                   {/* variant="h5" */}
                 </Grid>
               </Grid>
-              <MainCard content={false} sx={{ mt: 1.5 }} style={{width:"600px", height: "400px"}}>
+              <MainCard content={false} sx={{ mt: 1.5 }} style={{ width: "600px", height: "400px" }}>
                 <SummerDayTemperatureChart year={year} />
                 {console.log(year)}
               </MainCard>
             </Grid>
           </Grid>
 
-          
+
         </Stack>
 
       </Box>

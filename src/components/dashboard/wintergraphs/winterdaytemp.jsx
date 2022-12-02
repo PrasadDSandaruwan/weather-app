@@ -117,7 +117,7 @@ const WinterDayTemperatureChart = (props) => {
             pointRadius: [0],
             pointHitRadius: [0],
             data: outliermin,
-            label: "8.21 degree Celcius"
+            label: "8.21"
           },
           {
             fill: false, //for area chart
@@ -127,31 +127,31 @@ const WinterDayTemperatureChart = (props) => {
             pointRadius: [0],
             pointHitRadius: [0],
             data: outliermax,
-            label: "11.86 degree Celcius"
+            label: "11.86"
           },
           {
             fill: true, //for area chart
-            borderColor: "rgba(97, 167, 239, 0.9)",
+            borderColor: "rgba(0, 0, 91, 1) ",
             borderWidth: 3,
-            backgroundColor: "rgba(97, 167, 239, 0.9)",
+            backgroundColor: "rgba(0, 0, 91, 1)",
             data: selectData(props.year)[2],
-            label: "Minimum Temperature"
+            label: "min temp"
           },
           {
             fill: true, //for area chart
-            borderColor: "rgba(255, 167, 71, 0.9)",
+            borderColor: "rgba(245, 241, 252, 1)", //rgba(115, 147, 255, 1)
             borderWidth: 3,
-            backgroundColor: "rgba(255, 167, 71, 0.9)",
+            backgroundColor: "rgba(245, 241, 252, 1)",
             data: selectData(props.year)[0],
-            label: "Average Temperature"
+            label: "avg temp"
           },
           {
             fill: true, //for area chart
-            borderColor: "rgba(255, 48, 71, 0.9)",
+            borderColor: "rgba(0, 147, 255, 1)",
             borderWidth: 3,
-            backgroundColor: "rgba(255, 48, 71, 0.9)",
+            backgroundColor: "rgba(0, 147, 255, 1)",
             data: selectData(props.year)[1],
-            label: "Maximum Temperature"
+            label: "max temp"
           },
                     
         ],
@@ -169,26 +169,6 @@ const WinterDayTemperatureChart = (props) => {
         //   position: "top",
         // },
 
-        zoom: {
-          pan: {
-            enabled: true,
-            mode: 'y'
-          },
-  
-          zoom: {
-            pinch: {
-              enabled: true       // Enable pinch zooming
-            },
-            wheel: {
-              enabled: true,
-              modifierKey: 'ctrl'       // Enable wheel zooming
-            },
-            mode: 'y',
-            drag: {
-              enabled: true,
-            }
-          }
-        }
       },
       scales: {
 
@@ -197,7 +177,7 @@ const WinterDayTemperatureChart = (props) => {
             display: true
           },
           title: {
-            text: "Month-Date",
+            text: "Winter",
             display: true
           },
           //   ticks: {
@@ -213,7 +193,7 @@ const WinterDayTemperatureChart = (props) => {
             text: "Temperature in Degree Celcius",
             display: true
           },
-          max: 20,
+          max: 41,
           min: 0,
         },
         // "left-y-axis": {
@@ -249,14 +229,14 @@ const WinterDayTemperatureChart = (props) => {
   return (
 
     // <div class="yrmonchart">
-    <div id="chartbody" class="yrmonchartbody">
+    // <div id="chartbody" class="yrmonchartbody">
       <Line
         id="yrmonchart"
         type='bar'
         data={hour_avg_data}
         options={hour_avg_options}
       />
-    </div>
+    // </div>
 
 
     // </div>

@@ -108,37 +108,37 @@ const SummerDayTemperatureChart = (props) => {
         datasets: [
           {
             fill: false, //for area chart
-            borderColor: "rgba(0, 0, 0, 0.9)",
+            borderColor: "rgba(1, 1, 1, 0.9)",
             borderWidth: 3,
             // backgroundColor: "rgba(255, 48, 71, 0.9)",
             pointRadius: [0],
             pointHitRadius: [0],
             data: outlier,
-            label: "Outlier indicator"
+            label: "32"
           },
           {
             fill: true, //for area chart
-            borderColor: "rgba(97, 167, 239, 0.9)",
+            borderColor: "rgba(255, 255, 0, 1)",
             borderWidth: 3,
-            backgroundColor: "rgba(97, 167, 239, 0.9)",
+            backgroundColor: "rgba(255, 255, 0, 1)",
             data: selectData(props.year)[2],
-            label: "Minimum Temperature"
+            label: "min temp",
           },
           {
             fill: true, //for area chart
-            borderColor: "rgba(255, 167, 71, 0.9)",
+            borderColor: "rgba(255, 156, 0, 1)",
             borderWidth: 3,
-            backgroundColor: "rgba(255, 167, 71, 0.9)",
+            backgroundColor: "rgba(255, 156, 0, 1)",
             data: selectData(props.year)[0],
-            label: "Average Temperature"
+            label: "avg temp",
           },
           {
             fill: true, //for area chart
-            borderColor: "rgba(255, 48, 71, 0.9)",
+            borderColor: "rgba(255, 77, 0, 1)",
             borderWidth: 3,
-            backgroundColor: "rgba(255, 48, 71, 0.9)",
+            backgroundColor: "rgba(255, 77, 0, 1)",
             data: selectData(props.year)[1],
-            label: "Maximum Temperature"
+            label: "max temp",            
           },
                     
         ],
@@ -156,26 +156,7 @@ const SummerDayTemperatureChart = (props) => {
         //   position: "top",
         // },
 
-        zoom: {
-          pan: {
-            enabled: true,
-            mode: 'y'
-          },
-  
-          zoom: {
-            pinch: {
-              enabled: true       // Enable pinch zooming
-            },
-            wheel: {
-              enabled: true,
-              modifierKey: 'ctrl'       // Enable wheel zooming
-            },
-            mode: 'y',
-            drag: {
-              enabled: true,
-            }
-          }
-        }
+        
       },
       scales: {
 
@@ -184,7 +165,7 @@ const SummerDayTemperatureChart = (props) => {
             display: true
           },
           title: {
-            text: "Month-Date",
+            text: "Summer",
             display: true
           },
           //   ticks: {
@@ -201,7 +182,7 @@ const SummerDayTemperatureChart = (props) => {
             display: true
           },
           max: 41,
-          min: 7,
+          min: 0,
         },
         // "left-y-axis": {
         //   position: "left",

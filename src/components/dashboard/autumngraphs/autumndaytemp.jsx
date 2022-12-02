@@ -131,19 +131,19 @@ const AutumnDayTemperatureChart = (props) => {
           },
           {
             fill: true, //for area chart
-            borderColor: "rgba(97, 167, 239, 0.9)",
-            borderWidth: 3,
-            backgroundColor: "rgba(97, 167, 239, 0.9)",
-            data: selectData(props.year)[2],
-            label: "Minimum Temperature"
-          },
-          {
-            fill: true, //for area chart
             borderColor: "rgba(255, 167, 71, 0.9)",
             borderWidth: 3,
             backgroundColor: "rgba(255, 167, 71, 0.9)",
+            data: selectData(props.year)[2],
+            label: "min temp"
+          },
+          {
+            fill: true, //for area chart
+            borderColor: "rgba(198, 255, 0, 1)",
+            borderWidth: 3,
+            backgroundColor: "rgba(198, 255, 0, 1)",
             data: selectData(props.year)[0],
-            label: "Average Temperature"
+            label: "avg temp"
           },
           {
             fill: true, //for area chart
@@ -151,7 +151,7 @@ const AutumnDayTemperatureChart = (props) => {
             borderWidth: 3,
             backgroundColor: "rgba(255, 48, 71, 0.9)",
             data: selectData(props.year)[1],
-            label: "Maximum Temperature"
+            label: "max temp"
           },
                     
         ],
@@ -169,26 +169,6 @@ const AutumnDayTemperatureChart = (props) => {
         //   position: "top",
         // },
 
-        zoom: {
-          pan: {
-            enabled: true,
-            mode: 'y'
-          },
-  
-          zoom: {
-            pinch: {
-              enabled: true       // Enable pinch zooming
-            },
-            wheel: {
-              enabled: true,
-              modifierKey: 'ctrl'       // Enable wheel zooming
-            },
-            mode: 'y',
-            drag: {
-              enabled: true,
-            }
-          }
-        }
       },
       scales: {
 
@@ -197,7 +177,7 @@ const AutumnDayTemperatureChart = (props) => {
             display: true
           },
           title: {
-            text: "Month-Date",
+            text: "Autumn",
             display: true
           },
           //   ticks: {
@@ -213,8 +193,8 @@ const AutumnDayTemperatureChart = (props) => {
             text: "Temperature in Degree Celcius",
             display: true
           },
-          max: 37,
-          min: 2,
+          max: 41,
+          min: 0,
         },
         // "left-y-axis": {
         //   position: "left",
@@ -249,14 +229,14 @@ const AutumnDayTemperatureChart = (props) => {
   return (
 
     // <div class="yrmonchart">
-    <div id="chartbody" class="yrmonchartbody">
+    // <div id="chartbody" class="yrmonchartbody">
       <Line
         id="yrmonchart"
         type='bar'
         data={hour_avg_data}
         options={hour_avg_options}
       />
-    </div>
+    // </div>
 
 
     // </div>

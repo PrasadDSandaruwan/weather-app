@@ -39,13 +39,13 @@ var temp2019 = []
 var temp2020 = [] 
 
 d3.csv("/summerhrtemp.csv",function(data1){
-    hours.push(data1.hour)
-    temp2016.push(data1.yr2016)
-    temp2017.push(data1.yr2017)
-    temp2018.push(data1.yr2018)
-    temp2019.push(data1.yr2019)
-    temp2020.push(data1.yr2020)
-    
+  hours.push(data1.hour)
+  temp2016.push(data1.yr2016)
+  temp2017.push(data1.yr2017)
+  temp2018.push(data1.yr2018)
+  temp2019.push(data1.yr2019)
+  temp2020.push(data1.yr2020)
+  
 });
 
 const SummerHourlyAvgTempChart = (props) => {
@@ -76,16 +76,18 @@ const SummerHourlyAvgTempChart = (props) => {
   useEffect(() => {
     // const position = "top"; // CSS for graphs
     console.log(props.year)
+
+
     set_hour_avg_data({
         labels: hours,
         datasets: [
           {
             fill: true, //for area chart
-            borderColor: "#badbad",
+            borderColor: "rgba(255, 173, 0, 1)",
             borderWidth: 3,
-            backgroundColor: "rgba(186, 120, 203, 0.05)",
+            backgroundColor: "rgba(255, 173, 0, 0.6)",
             data: selectData(props.year),
-            label: props.year
+            label: "summer"
           },
           
         ],
@@ -103,32 +105,12 @@ const SummerHourlyAvgTempChart = (props) => {
         //   position: "top",
         // },
 
-        zoom: {
-          pan: {
-            enabled: true,
-            mode: 'y'
-          },
-  
-          zoom: {
-            pinch: {
-              enabled: true       // Enable pinch zooming
-            },
-            wheel: {
-              enabled: true,
-              modifierKey: 'ctrl'       // Enable wheel zooming
-            },
-            mode: 'y',
-            drag: {
-              enabled: true,
-            }
-          }
-        }
       },
       scales: {
 
         x: {
           grid: {
-            display: true
+            display: false
           },
           title: {
             text: "Hour",
@@ -148,7 +130,7 @@ const SummerHourlyAvgTempChart = (props) => {
             display: true
           },
           max: 26,
-          min: 14
+          min: 6,
         },
         // "left-y-axis": {
         //   position: "left",
