@@ -32,7 +32,8 @@ ChartJS.register(
 );
 
 var monthdate = []
-var outlier = []
+var outliermin = []
+var outliermax = []
 var temp2016avg = []
 var temp2017avg = []
 var temp2018avg = []
@@ -53,7 +54,8 @@ var temp2020max = []
 
 d3.csv("/summerdaytemp.csv",function(data1){
     monthdate.push(data1.monthdate)
-    outlier.push(data1.outlier)
+    outliermin.push(data1.outliermin)
+    outliermax.push(data1.outliermax)
 
     temp2016avg.push(data1.yr2016avg)
     temp2017avg.push(data1.yr2017avg)
@@ -108,13 +110,23 @@ const SummerDayTemperatureChart = (props) => {
         datasets: [
           {
             fill: false, //for area chart
-            borderColor: "rgba(1, 1, 1, 0.9)",
+            borderColor: "rgba(255, 255, 255, 1)",
             borderWidth: 3,
             // backgroundColor: "rgba(255, 48, 71, 0.9)",
             pointRadius: [0],
             pointHitRadius: [0],
-            data: outlier,
-            label: "32"
+            data: outliermax,
+            label: "32.42"
+          },
+          {
+            fill: false, //for area chart
+            borderColor: "rgba(0, 0, 0, 1)",
+            borderWidth: 3,
+            // backgroundColor: "rgba(255, 48, 71, 0.9)",
+            pointRadius: [0],
+            pointHitRadius: [0],
+            data: outliermin,
+            label: "5.49"
           },
           {
             fill: true, //for area chart

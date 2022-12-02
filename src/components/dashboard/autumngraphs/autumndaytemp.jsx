@@ -121,7 +121,7 @@ const AutumnDayTemperatureChart = (props) => {
           },
           {
             fill: false, //for area chart
-            borderColor: "rgba(0, 0, 0, 0.9)",
+            borderColor: "rgba(255, 255, 255, 0.9)",
             borderWidth: 3,
             // backgroundColor: "rgba(255, 48, 71, 0.9)",
             pointRadius: [0],

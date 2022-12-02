@@ -111,7 +111,7 @@ const WinterDayTemperatureChart = (props) => {
         datasets: [
           {
             fill: false, //for area chart
-            borderColor: "rgba(0, 0, 0, 0.9)",
+            borderColor: "rgba(255, 255, 255, 1)",
             borderWidth: 3,
             // backgroundColor: "rgba(255, 48, 71, 0.9)",
             pointRadius: [0],
@@ -121,7 +121,7 @@ const WinterDayTemperatureChart = (props) => {
           },
           {
             fill: false, //for area chart
-            borderColor: "rgba(0, 0, 0, 0.9)",
+            borderColor: "rgba(0, 0, 0, 1)",
             borderWidth: 3,
             // backgroundColor: "rgba(255, 48, 71, 0.9)",
             pointRadius: [0],

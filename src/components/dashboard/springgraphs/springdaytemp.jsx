@@ -109,19 +109,19 @@ const SpringDayTemperatureChart = (props) => {
     set_hour_avg_data({
         labels: monthdate,
         datasets: [
-        //   {
-        //     fill: false, //for area chart
-        //     borderColor: "rgba(0, 0, 0, 0.9)",
-        //     borderWidth: 3,
-        //     // backgroundColor: "rgba(255, 48, 71, 0.9)",
-        //     pointRadius: [0],
-        //     pointHitRadius: [0],
-        //     data: outliermin,
-        //     label: "1.71"
-        //   },
           {
             fill: false, //for area chart
             borderColor: "rgba(0, 0, 0, 0.9)",
+            borderWidth: 3,
+            // backgroundColor: "rgba(255, 48, 71, 0.9)",
+            pointRadius: [0],
+            pointHitRadius: [0],
+            data: outliermin,
+            label: "1.71"
+          },
+          {
+            fill: false, //for area chart
+            borderColor: "rgba(255, 255, 255, 0.9)",
             borderWidth: 3,
             // backgroundColor: "rgba(255, 48, 71, 0.9)",
             pointRadius: [0],

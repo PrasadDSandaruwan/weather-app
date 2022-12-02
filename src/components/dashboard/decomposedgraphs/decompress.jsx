@@ -23,9 +23,9 @@ d3.csv("/decomposeddata3.csv", function (data1) {
 
     //   user.push(data.user); 
     date.push(data1.date);
-    tempseasonal.push(data1.mean_sea_level_pressure_trendseasonal);
-    tempobserved.push(data1.mean_sea_level_pressure_observed);
-    temptrend.push(data1.mean_sea_level_pressure_trend);
+    tempseasonal.push(data1.dewpoint_temperature_trendseasonal);
+    tempobserved.push(data1.dewpoint_temperature_observed);
+    temptrend.push(data1.dewpoint_temperature_trend);
 
 });
 
@@ -155,11 +155,11 @@ export default function DecomposedPressureChart(props) {
                         display: true
                     },
                     title: {
-                        text: "Mean Sea Level Pressure in Pa",
+                        text: "Dewpoint Temperature in degree Celcius",
                         display: true
                     },
-                    max: 103500,
-                    min: 96000,
+                    max: 22,
+                    min: -1,
                 },
 
             },
