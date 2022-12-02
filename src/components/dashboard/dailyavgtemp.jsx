@@ -79,7 +79,7 @@ function DailyAverageTemperatureContent() {
                                         style={{
                                             fontSize: 14,
                                             fontStyle: "bold",
-                                            backgroundColor: "#0a0a23",
+                                            backgroundColor: "rgba(0, 0, 0, 0.4)",
                                             color: "#fff",
                                             borderRadius: "10px",
                                             boxShadow: "0px 0px 2px 2px rgb(0,0,0)",
@@ -96,7 +96,7 @@ function DailyAverageTemperatureContent() {
                                         style={{
                                             fontSize: 14,
                                             fontStyle: "bold",
-                                            backgroundColor: "#0a0a23",
+                                            backgroundColor: "rgba(0, 0, 0, 0.4)",
                                             color: "#fff",
                                             borderRadius: "10px",
                                             boxShadow: "0px 0px 2px 2px rgb(0,0,0)",
@@ -113,7 +113,7 @@ function DailyAverageTemperatureContent() {
                                         style={{
                                             fontSize: 14,
                                             fontStyle: "bold",
-                                            backgroundColor: "#0a0a23",
+                                            backgroundColor: "rgba(0, 0, 0, 0.4)",
                                             color: "#fff",
                                             borderRadius: "10px",
                                             boxShadow: "0px 0px 2px 2px rgb(0,0,0)",
@@ -130,7 +130,7 @@ function DailyAverageTemperatureContent() {
                                         style={{
                                             fontSize: 14,
                                             fontStyle: "bold",
-                                            backgroundColor: "#0a0a23",
+                                            backgroundColor: "rgba(0, 0, 0, 0.4)",
                                             color: "#fff",
                                             borderRadius: "10px",
                                             boxShadow: "0px 0px 2px 2px rgb(0,0,0)",
@@ -147,7 +147,7 @@ function DailyAverageTemperatureContent() {
                                         style={{
                                             fontSize: 14,
                                             fontStyle: "bold",
-                                            backgroundColor: "#0a0a23",
+                                            backgroundColor: "rgba(0, 0, 0, 0.4)",
                                             color: "#fff",
                                             borderRadius: "10px",
                                             boxShadow: "0px 0px 2px 2px rgb(0,0,0)",

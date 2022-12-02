@@ -26,7 +26,7 @@ import DailyAverageTemperatureContent from "./dailyavgtemp";
 
 function DashboardContent() {
 
-    const [year, setYear] = useState("hourtemp");
+    const [year, setYear] = useState("hoursolar");
 
     return (
         <>
@@ -70,34 +70,13 @@ function DashboardContent() {
                                 <Stack direction="row" alignItems="center" spacing={1} style={{ marginLeft: "120px", marginTop: "30px" }}>
                                 <Button className="mainbtn"
                                         size="large"
-                                        onClick={() => setYear("hourtemp")}
-                                        color={year === "hourtemp" ? "primary" : "secondary"}
-                                        variant={year === "hourtemp" ? "outlined" : "text"}
-                                        style={{
-                                            fontSize: 14,
-                                            fontStyle: "bold",
-                                            backgroundColor: "#0a0a23",
-                                            color: "#fff",
-                                            borderRadius: "10px",
-                                            boxShadow: "0px 0px 2px 2px rgb(0,0,0)",
-                                            transition: "0.25w",
-                                            maxWidth: "300px",
-                                            minWidth: "300px",
-                                            minHeight: "50px",
-                                            maxHeight: "50px"
-                                        }}
-                                    >
-                                        Hourly Average Temperature
-                                    </Button>
-                                    <Button className="mainbtn"
-                                        size="large"
                                         onClick={() => setYear("hoursolar")}
                                         color={year === "hoursolar" ? "primary" : "secondary"}
                                         variant={year === "hoursolar" ? "outlined" : "text"}
                                         style={{
                                             fontSize: 14,
                                             fontStyle: "bold",
-                                            backgroundColor: "#0a0a23",
+                                            backgroundColor: "rgba(0, 0, 0, 0.4)",
                                             color: "#fff",
                                             borderRadius: "10px",
                                             boxShadow: "0px 0px 2px 2px rgb(0,0,0)",
@@ -112,13 +91,34 @@ function DashboardContent() {
                                     </Button>
                                     <Button className="mainbtn"
                                         size="large"
+                                        onClick={() => setYear("hourtemp")}
+                                        color={year === "hourtemp" ? "primary" : "secondary"}
+                                        variant={year === "hourtemp" ? "outlined" : "text"}
+                                        style={{
+                                            fontSize: 14,
+                                            fontStyle: "bold",
+                                            backgroundColor: "rgba(0, 0, 0, 0.4)",
+                                            color: "#fff",
+                                            borderRadius: "10px",
+                                            boxShadow: "0px 0px 2px 2px rgb(0,0,0)",
+                                            transition: "0.25w",
+                                            maxWidth: "300px",
+                                            minWidth: "300px",
+                                            minHeight: "50px",
+                                            maxHeight: "50px"
+                                        }}
+                                    >
+                                        Hourly Average Temperature
+                                    </Button>
+                                    <Button className="mainbtn"
+                                        size="large"
                                         onClick={() => setYear("daytemp")}
                                         color={year === "daytemp" ? "primary" : "secondary"}
                                         variant={year === "daytemp" ? "outlined" : "text"}
                                         style={{
                                             fontSize: 14,
                                             fontStyle: "bold",
-                                            backgroundColor: "#0a0a23",
+                                            backgroundColor: "rgba(0, 0, 0, 0.4)",
                                             color: "#fff",
                                             borderRadius: "10px",
                                             boxShadow: "0px 0px 2px 2px rgb(0,0,0)",
