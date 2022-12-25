@@ -1,10 +1,10 @@
 // import "querystring";
 import http from "./httpService";
-// import { apiUrl, auth_username, auth_password } from "../config.json";
+import CONFIG from "../config.json";
 
 // const querystring = require("querystring");
 
-const apiEndpoint = "http://127.0.0.1:5000/api/v1/" + "forecast/";
+const apiEndpoint = CONFIG.apiUrl + "forecast/";
 
 export async function getCurrentData() {
   const response = await http.get(apiEndpoint + "weather-now");

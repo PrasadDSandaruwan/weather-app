@@ -1,10 +1,10 @@
 import axios from "axios";
-// import { apiUrl } from "../config.json";
+import CONFIG from "../config.json";
 
 let bearer_token = localStorage.getItem("access_token");
 
 const axiosInstance = axios.create({
-  baseURL: "http://127.0.0.1:5000/",
+  baseURL: CONFIG.apiUrl,
   headers: { Authorization: `Bearer ${bearer_token}` },
 });
 
