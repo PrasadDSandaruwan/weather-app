@@ -4,6 +4,7 @@ import Login from "./components/common/login";
 import SignUp from "./components/common/signup";
 import Home from "./components/pages/Home";
 import Dashboard from "./components/dashboard/dashboard";
+import Forecast from "./components/forecast/forecast";
 
 // import HomeNavbar from "./components/navbar/HomeNavbar";
 // import RoutesMap from "./components/common/RoutesMap";
@@ -47,6 +48,7 @@ export class AppRoutes extends Component {
           <Route path="/auth" element={<Login />} />
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/forecast" element={<Forecast />} />
         </Routes>
       </BrowserRouter>
     );
