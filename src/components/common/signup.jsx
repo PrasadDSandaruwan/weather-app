@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Admin from "../../layouts/Admin";
 
 const SignUp = (props) => {
+  const [inputs, setInputs] = useState({});
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs((values) => ({ ...values, [name]: value }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(inputs.first_name);
+  };
+
   return (
     <Admin>
       <div className="min-vh-100 d-flex justify-content-center align-items-center">
@@ -15,18 +28,24 @@ const SignUp = (props) => {
               <div className="mb-3 col">
                 <label>First Name</label>
                 <input
-                  type="email"
+                  type="text"
+                  name="first_name"
                   className="form-control"
                   placeholder="Enter email"
+                  value={inputs.first_name || ""}
+                  onChange={handleChange}
                 />
               </div>
 
               <div className="mb-3 col">
                 <label>Last Name</label>
                 <input
-                  type="email"
+                  type="text"
+                  name="last_name"
                   className="form-control"
                   placeholder="Enter email"
+                  value={inputs.last_name || ""}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -35,21 +54,31 @@ const SignUp = (props) => {
               <label>Email address</label>
               <input
                 type="email"
+                name="email"
                 className="form-control"
                 placeholder="Enter email"
+                value={inputs.email || ""}
+                onChange={handleChange}
               />
             </div>
             <div className="mb-3">
               <label>Password</label>
               <input
                 type="password"
+                name="password"
                 className="form-control"
                 placeholder="Enter password"
+                value={inputs.password || ""}
+                onChange={handleChange}
               />
             </div>
 
             <div className="d-grid">
-              <button type="submit" className="btn btn-primary bg-dark">
+              <button
+                type="submit"
+                className="btn btn-primary bg-dark"
+                onClick={handleSubmit}
+              >
                 Submit
               </button>
             </div>

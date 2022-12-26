@@ -1,0 +1,22 @@
+.analyze-box {
+  height: 70%;
+  width: 75%;
+}
+
+.analyse-image {
+  background: url("../../images/analyse.png") center;
+  background-repeat: no-repeat;
+  background-size: 90% 90%;
+}
+
+.analyse-text {
+  color: black;
+  font-size: 5vmin;
+  font-family: "Dank Mono", ui-monospace, monospace;
+  font-weight: bold;
+  line-height: 1.1;
+
+  background: linear-gradient(to right, rgb(13, 15, 12), rgb(13, 87, 130));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -2,9 +2,14 @@ import React, { Component } from "react";
 import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
 import Login from "./components/common/login";
 import SignUp from "./components/common/signup";
-import Home from "./components/Home";
+
+import Home from "./components/pages/Home";
+import Dashboard from "./components/dashboard/dashboard";
+import Forecast from "./components/forecast/forecast";
+
 import DashboardContent from "./components/dashboard/dashboard2";
 import DecomposedContent from "./components/dashboard/decomposedcontent";
+
 // import HomeNavbar from "./components/navbar/HomeNavbar";
 // import RoutesMap from "./components/common/RoutesMap";
 // import Admin from "./layouts/Admin";
@@ -46,8 +51,11 @@ export class AppRoutes extends Component {
           <Route path="/register" element={<SignUp />} />
           <Route path="/auth" element={<Login />} />
           <Route path="/" element={<Home></Home>}></Route>
-          <Route path="/dashboard" element={<DashboardContent />} />
+
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/forecast" element={<Forecast />} />
           <Route path="/decomposed" element={<DecomposedContent/>} />
+
         </Routes>
       </BrowserRouter>
     );
