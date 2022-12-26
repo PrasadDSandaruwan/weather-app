@@ -7,7 +7,7 @@ const User = ({ children }) => {
     <React.Fragment>
       <UserNavbar />
       <main>{children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </React.Fragment>
   );
 };
