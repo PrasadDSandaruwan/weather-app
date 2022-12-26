@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-// import Admin from "../../layouts/Admin";
+import { Navigate } from "react-router-dom";
+
+import { login, loginWithJwt } from "../../service/authService";
 
 const Login = (props) => {
   const [inputs, setInputs] = useState({});
@@ -10,9 +12,21 @@ const Login = (props) => {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    alert(inputs.email);
+    try {
+      const response = await login(inputs.email, inputs.password);
+      if (response.status == 200) {
+        const token = response.data.access_token;
+        console.log(response);
+        loginWithJwt(token, "");
+        window.location = "/";
+      } else {
+        throw Error("Login Failed!");
+      }
+    } catch (error) {
+      console.log("error", error);
+    }
   };
 
   return (

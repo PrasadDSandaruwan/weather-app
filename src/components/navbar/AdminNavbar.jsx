@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import LoggedIn from "../common/loggedIn";
 import Logo from "../common/SVG/footerLogo";
 import "./css/HomeNavbar.css";
 
@@ -16,7 +17,7 @@ const AdminNavbar = (props) => {
                 <Logo></Logo>
               </div>
 
-              <div class="collapse navbar-collapse col-8" id="navbarNav">
+              <div class="collapse navbar-collapse col-6" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item nav-link">
                     <NavLink class="nav-link" to="#">
@@ -29,6 +30,9 @@ const AdminNavbar = (props) => {
                     </NavLink>
                   </li>
                 </ul>
+              </div>
+              <div className="col-2 text-center m-auto align-items-center justify-content-center">
+                <LoggedIn></LoggedIn>
               </div>
             </div>
           </div>

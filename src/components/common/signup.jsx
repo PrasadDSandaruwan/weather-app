@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Admin from "../../layouts/Admin";
+import { addUser } from "../../service/userService";
 
 const SignUp = (props) => {
   const [inputs, setInputs] = useState({});
@@ -10,9 +11,17 @@ const SignUp = (props) => {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    alert(inputs.first_name);
+
+    const data = {
+      first_name: inputs.first_name,
+      last_name: inputs.last_name,
+      email: inputs.email,
+      password: inputs.password,
+    };
+
+    const response = addUser();
   };
 
   return (

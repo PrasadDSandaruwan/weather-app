@@ -1,19 +1,22 @@
-// import 'querystring'
-// import http from '../httpService'
-// import { apiUrl } from '../../config.json'
-// import Auth from '../user/authService'
+import jwtDecode from "jwt-decode";
 
-// export async function addUser(data) {
-//   console.log('add user data', data)
+import http from "./httpService";
+import CONFIG from "../config.json";
+import Auth from "./authService";
 
-//   const apiEndPoint = apiUrl + '/v1/user/add-user'
-//   const response = await http.post(apiEndPoint, data, {
-//     headers: { Authorization: `Bearer ${Auth.getJwt()}` },
-//   })
+const apiUrl = CONFIG.apiUrl + "user/";
 
-//   console.log('add user', response)
-//   return response
-// }
+export async function addUser(data) {
+  console.log("add user data", data);
+
+  const apiEndPoint = apiUrl + "add-user";
+  const response = await http.post(apiEndPoint, data, {
+    headers: { Authorization: `Bearer ${Auth.getJwt()}` },
+  });
+
+  console.log("add user", response);
+  return response;
+}
 
 // export async function getUserTypes() {
 //   console.log('get user types')
@@ -121,15 +124,15 @@
 //   return response
 // }
 
-// export default {
-//   addUser,
-//   getUserTypes,
-//   changePassword,
-//   getUserDetails,
-//   updateUserProfile,
-//   getAllUsers,
-//   deleteUser,
-//   forceChangePassword,
-//   checkForcePassword,
-//   checkEmailAndNic,
-// }
+export default {
+  addUser,
+  //   getUserTypes,
+  //   changePassword,
+  //   getUserDetails,
+  //   updateUserProfile,
+  //   getAllUsers,
+  //   deleteUser,
+  //   forceChangePassword,
+  //   checkForcePassword,
+  //   checkEmailAndNic,
+};
