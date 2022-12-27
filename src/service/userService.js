@@ -7,11 +7,14 @@ import Auth from "./authService";
 const apiUrl = CONFIG.apiUrl + "user/";
 
 export async function addUser(data) {
-  console.log("add user data", data);
+  console.log("add user data", Auth.getJwt());
 
   const apiEndPoint = apiUrl + "add-user";
   const response = await http.post(apiEndPoint, data, {
-    headers: { Authorization: `Bearer ${Auth.getJwt()}` },
+    headers: {
+      token: `${Auth.getJwt()}`,
+      "Content-Type": "multipart/form-data",
+    },
   });
 
   console.log("add user", response);

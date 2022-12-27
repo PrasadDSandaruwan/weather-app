@@ -3,12 +3,13 @@ import { NavLink } from "react-router-dom";
 import Logo from "../common/SVG/footerLogo";
 import "./css/HomeNavbar.css";
 import { Typewriter } from "react-simple-typewriter";
+import authService from "../../service/authService";
 
 const HomeNavbar = (props) => {
   const [colorChange, setColorchange] = useState(false);
   const changeNavbarColor = () => {
     // const height = window.height;
-    if (window.scrollY >= 570) {
+    if (window.scrollY >= 500) {
       setColorchange(true);
     } else {
       setColorchange(false);
@@ -33,15 +34,45 @@ const HomeNavbar = (props) => {
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item nav-link">
-                <NavLink class="nav-link" to="#">
+                <NavLink class="nav-link" to="/dashboard">
                   <span className="text-white">Dashboard</span>
                 </NavLink>
               </li>
               <li class="nav-item nav-link">
-                <NavLink class="nav-link" to="#">
+                <NavLink class="nav-link" to="/forecast">
                   <span className="text-white">Forecast</span>
                 </NavLink>
               </li>
+
+              {authService.getCurrentUser() && (
+                <>
+                  <li class="nav-item nav-link">
+                    <NavLink class="nav-link" to="/add-user">
+                      <span className="text-white">Add User</span>
+                    </NavLink>
+                  </li>
+                  <li class="nav-item nav-link">
+                    <NavLink class="nav-link" to="/">
+                      <span className="text-white">Add Dataset</span>
+                    </NavLink>
+                  </li>
+                  <li class="nav-item nav-link">
+                    <NavLink class="nav-link" to="/logout">
+                      <span className="text-white">Logout</span>
+                    </NavLink>
+                  </li>
+                  {/* <li class="nav-item nav-link">
+                    <NavLink class="nav-link" to="#">
+                      <span className="text-white">Forecast</span>
+                    </NavLink>
+                  </li>
+                  <li class="nav-item nav-link">
+                    <NavLink class="nav-link" to="#">
+                      <span className="text-white">Forecast</span>
+                    </NavLink>
+                  </li> */}
+                </>
+              )}
               {/* <li class="nav-item nav-link">
                 <NavLink class="nav-link" to="#">
                   Pricing

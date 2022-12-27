@@ -1,6 +1,7 @@
 // import "querystring";
 import http from "./httpService";
 import CONFIG from "../config.json";
+import Auth from "./authService";
 
 // const querystring = require("querystring");
 
@@ -36,9 +37,18 @@ export async function getWeekdays() {
   return response.data;
 }
 
+export async function uploadCSVFile(file) {
+  const response = await http.post(apiEndpoint + "upload-csv", file, {
+    headers: { token: `${Auth.getJwt()}` },
+  });
+
+  return response.data;
+}
+
 export default {
   getCurrentData,
   getPrediction,
   getMinMax,
   getWeekdays,
+  uploadCSVFile,
 };

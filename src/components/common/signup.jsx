@@ -20,8 +20,13 @@ const SignUp = (props) => {
       email: inputs.email,
       password: inputs.password,
     };
+    try {
+      const response = addUser(data);
+    } catch (error) {
+      // TODO
+    }
 
-    const response = addUser();
+    // console.log(response);
   };
 
   return (
