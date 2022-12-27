@@ -208,7 +208,7 @@ const Forecast = (props) => {
               <div className="font-weight-bold" style={{ fontSize: "2em" }}>
                 Daily Forecast
               </div>
-              <div>
+              <div style={{ height: "300px" }}>
                 <ForecastChart></ForecastChart>
               </div>
               <div
