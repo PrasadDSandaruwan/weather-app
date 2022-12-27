@@ -14,7 +14,6 @@ import {
 const Forecast = (props) => {
   const [current_weather, set_current_weather] = useState({
     date: "",
-    dewpoint_temp: "",
     huminidy: "",
     solar_radiation: "",
     temperature: "",
@@ -133,7 +132,7 @@ const Forecast = (props) => {
                       <div> {current_weather.solar_radiation}</div>
                     </div>
                   </div>
-                  <div className="row m-3">
+                  {/* <div className="row m-3">
                     <div
                       style={{ marginRight: "20px" }}
                       className="d-inline-block text-white border-bottom border-white col"
@@ -141,11 +140,11 @@ const Forecast = (props) => {
                       <div> Dew Point Temperature</div>
                       <div>{current_weather.dewpoint_temp} </div>
                     </div>
-                    {/* <div className="d-inline-block text-white border-bottom border-white col">
+                    <div className="d-inline-block text-white border-bottom border-white col">
                   <div>HUMINIDY </div>
                   <div> 20%</div>
-                </div> */}
-                  </div>
+                </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -207,7 +206,7 @@ const Forecast = (props) => {
               className="container text-center justify-content-center mx-auto"
             >
               <div className="font-weight-bold" style={{ fontSize: "2em" }}>
-                Seven Day Forecast
+                Daily Forecast
               </div>
               <div>
                 <ForecastChart></ForecastChart>

@@ -49,18 +49,12 @@ const options = {
         drawOnChartArea: false,
       },
     },
-
-    x: {
-      display: false,
-      position: "middle",
-    },
   },
 };
 
 const ForecastChart = (props) => {
   const [all_data, set_all_data] = useState({
     dates: [],
-    dewpoint_temp: [],
     huminidy: [],
     solar_radiation: [],
     temperature: [],
@@ -93,13 +87,6 @@ const ForecastChart = (props) => {
             borderColor: "rgb(53, 162, 235)",
             backgroundColor: "rgba(53, 162, 235, 0.5)",
             yAxisID: "y1",
-          },
-          {
-            label: "Dew point temp.",
-            data: all_data.dewpoint_temp,
-            borderColor: "rgb(0, 240, 124)",
-            backgroundColor: "rgba(50, 240, 124, 0.5)",
-            yAxisID: "y",
           },
           {
             label: "solar radiation",
