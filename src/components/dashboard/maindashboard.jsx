@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 
 // import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
 // import HomeNavbar from "../navbar/HomeNavbar";
-import User from "../../layouts/User";
 import MainCard from "./MainCard";
 
 import {
@@ -23,6 +22,7 @@ import {
 import HourlyAverageTemperatureContent from "./hourlyavgtemp";
 import HourlyAverageSolarContent from "./hourlyavgsolar";
 import DailyAverageTemperatureContent from "./dailyavgtemp";
+import AdminNavbar from "../navbar/AdminNavbar";
 
 function MainDashboard() {
 
@@ -30,7 +30,7 @@ function MainDashboard() {
 
     return (
         <>
-            <User />
+            <AdminNavbar/>
             <Box component="main" sx={{ flex: 1, py: 6, px: 4, pt: 3, pb: 3 }} style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}>
                 {/* style={{backgroundColor:"black"}} */}
                 <Typography

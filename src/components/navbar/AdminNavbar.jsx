@@ -26,6 +26,16 @@ const AdminNavbar = (props) => {
                     </NavLink>
                   </li>
                   <li class="nav-item nav-link">
+                    <NavLink class="nav-link" to="/seasonal">
+                      <span className="text-white">Seasonal Analysis</span>
+                    </NavLink>
+                  </li>
+                  <li class="nav-item nav-link">
+                    <NavLink class="nav-link" to="/decomposed">
+                      <span className="text-white">Decomposition Analysis</span>
+                    </NavLink>
+                  </li>
+                  <li class="nav-item nav-link">
                     <NavLink class="nav-link" to="/forecast">
                       <span className="text-white">Forecast</span>
                     </NavLink>
