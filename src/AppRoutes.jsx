@@ -13,6 +13,7 @@ import UploadCSV from "./components/common/uploadCSV";
 
 import DashboardContent from "./components/dashboard/dashboard2";
 import DecomposedContent from "./components/dashboard/decomposedcontent";
+import MainDashboard from "./components/dashboard/maindashboard";
 
 export class AppRoutes extends Component {
   render() {
@@ -31,11 +32,14 @@ export class AppRoutes extends Component {
           <Route path="/upload-dataset" element={<UploadCSV />} />
           <Route path="/" element={<Home></Home>}></Route>
 
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/seasonal" element={<DashboardContent />} />
           <Route path="/forecast" element={<Forecast />} />
+
           <Route path="/logout" element={<Logout />} />
 
-          <Route path="/decomposed" element={<DecomposedContent />} />
+          <Route path="/decomposed" element={<DecomposedContent/>} />
+          <Route path="/dashboard" element={<MainDashboard />} />
+
         </Routes>
       </BrowserRouter>
     );
