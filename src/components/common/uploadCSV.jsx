@@ -16,7 +16,11 @@ const UploadCSV = () => {
 
     // console.log(event.target.files);
     formData.append("file", selectedFile);
-    uploadCSVFile(formData);
+    try {
+      const res = uploadCSVFile(formData);
+    } catch (error) {
+      // TODO
+    }
   };
 
   return (
@@ -32,7 +36,12 @@ const UploadCSV = () => {
       >
         <div>Upload File Here</div>
         <form className="w-100">
-          <input type="file" name="file" onChange={handleFileSelect}></input>
+          <input
+            type="file"
+            name="file"
+            onChange={handleFileSelect}
+            required
+          ></input>
           <button
             type="submit"
             className="btn btn-primary bg-dark"
