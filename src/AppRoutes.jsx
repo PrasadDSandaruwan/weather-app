@@ -9,6 +9,7 @@ import Forecast from "./components/forecast/forecast";
 
 import DashboardContent from "./components/dashboard/dashboard2";
 import DecomposedContent from "./components/dashboard/decomposedcontent";
+import MainDashboard from "./components/dashboard/maindashboard";
 
 // import HomeNavbar from "./components/navbar/HomeNavbar";
 // import RoutesMap from "./components/common/RoutesMap";
@@ -52,9 +53,10 @@ export class AppRoutes extends Component {
           <Route path="/auth" element={<Login />} />
           <Route path="/" element={<Home></Home>}></Route>
 
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/seasonal" element={<DashboardContent />} />
           <Route path="/forecast" element={<Forecast />} />
           <Route path="/decomposed" element={<DecomposedContent/>} />
+          <Route path="/dashboard" element={<MainDashboard />} />
 
         </Routes>
       </BrowserRouter>
