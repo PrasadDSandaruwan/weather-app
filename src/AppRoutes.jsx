@@ -7,54 +7,36 @@ import Home from "./components/pages/Home";
 import Dashboard from "./components/dashboard/dashboard";
 import Forecast from "./components/forecast/forecast";
 
+import ProtectedRoute from "./components/common/pretectedRoute";
+import Logout from "./components/common/logout";
+import UploadCSV from "./components/common/uploadCSV";
+
 import DashboardContent from "./components/dashboard/dashboard2";
 import DecomposedContent from "./components/dashboard/decomposedcontent";
 import MainDashboard from "./components/dashboard/maindashboard";
-
-// import HomeNavbar from "./components/navbar/HomeNavbar";
-// import RoutesMap from "./components/common/RoutesMap";
-// import Admin from "./layouts/Admin";
-// import Auth from "./layouts/Auth";
-// import User from "./layouts/User";
-
-// const RoutesMap = ({ component: Component, layout: Layout, ...rest }) => {
-//   <Route
-//     {...rest}
-//     render={(props) => {
-//       <Layout>
-//         <Component {...props}></Component>
-//       </Layout>;
-//     }}
-//   ></Route>;
-// };
 
 export class AppRoutes extends Component {
   render() {
     return (
       <BrowserRouter>
         <Routes>
-          {/* <Route
-            path="/admin"
-            render={(props) => {
-              <Admin>
-                <Login {...props}></Login>
-              </Admin>;
-            }}
-          ></Route> */}
-          {/* <Route path="/admin" render={(props) => <Admin {...props}></Admin>} /> */}
-          {/* <Route path="/admin" element={<Admin />} /> */}
-          {/* <Route path="/auth" element={<Auth />} /> */}
-          {/* <Route path="/" element={<User />} /> */}
-          {/* <Navigate to="/" /> */}
-          {/* <Admin></Admin> */}
-          {/* <Route path="/auth" render={(props) => <Auth {...props}></Auth>} />
-          <Route path="/" render={(props) => <User {...props} />} /> */}
-          <Route path="/register" element={<SignUp />} />
+          <Route
+            path="/add-user"
+            element={
+              <ProtectedRoute>
+                <SignUp />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/auth" element={<Login />} />
+          <Route path="/upload-dataset" element={<UploadCSV />} />
           <Route path="/" element={<Home></Home>}></Route>
 
           <Route path="/seasonal" element={<DashboardContent />} />
           <Route path="/forecast" element={<Forecast />} />
+
+          <Route path="/logout" element={<Logout />} />
+
           <Route path="/decomposed" element={<DecomposedContent/>} />
           <Route path="/dashboard" element={<MainDashboard />} />
 
