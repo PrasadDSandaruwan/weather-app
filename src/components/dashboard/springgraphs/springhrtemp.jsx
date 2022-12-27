@@ -50,7 +50,14 @@ d3.csv("/springhrtemp.csv",function(data1){
 
 const SpringHourlyAvgTempChart = (props) => {
   const [hour_avg_data, set_hour_avg_data] =
-    useState({ datasets: [] });
+    useState({ datasets: [{
+      fill: true, //for area chart
+      borderColor: "rgba(0, 167, 0, 1)",
+      borderWidth: 3,
+      backgroundColor: "rgba(0, 167, 0, 0.6)",
+      data: temp2016,
+      label: "spring"
+    },] });
   const [hour_avg_options, set_hour_avg_options] =
     useState({});
 
@@ -81,11 +88,11 @@ const SpringHourlyAvgTempChart = (props) => {
         datasets: [
           {
             fill: true, //for area chart
-            borderColor: "#badbad",
+            borderColor: "rgba(0, 167, 0, 1)",
             borderWidth: 3,
-            backgroundColor: "rgba(186, 120, 203, 0.05)",
+            backgroundColor: "rgba(0, 167, 0, 0.6)",
             data: selectData(props.year),
-            label: props.year
+            label: "spring"
           },
           
         ],
@@ -102,42 +109,17 @@ const SpringHourlyAvgTempChart = (props) => {
         //   text: "Hourly Average Temperature on a Spring Day in ",
         //   position: "top",
         // },
-
-        zoom: {
-          pan: {
-            enabled: true,
-            mode: 'y'
-          },
-  
-          zoom: {
-            pinch: {
-              enabled: true       // Enable pinch zooming
-            },
-            wheel: {
-              enabled: true,
-              modifierKey: 'ctrl'       // Enable wheel zooming
-            },
-            mode: 'y',
-            drag: {
-              enabled: true,
-            }
-          }
-        }
       },
       scales: {
 
         x: {
           grid: {
-            display: true
+            display: false
           },
           title: {
             text: "Hour",
             display: true
           },
-          //   ticks: {
-          //     autoSkip: false,
-          //     // maxTicksLimit: 50,
-          // },
         },
         y: {
           grid: {
@@ -147,31 +129,9 @@ const SpringHourlyAvgTempChart = (props) => {
             text: "Temperature in Degree Celcius",
             display: true
           },
-          max: 20,
-          min: 10
+          max: 26,
+          min: 6
         },
-        // "left-y-axis": {
-        //   position: "left",
-        //   grid: {
-        //     borderDash: [8, 6],
-        //     lineWidth: 2
-        //   },
-        //   title: {
-        //     text: "Temperature in Degree Celcius",
-        //     display: true
-        //   }
-        // },
-        // "right-y-axis": {
-        //   position: "right",
-        //   grid: {
-        //     display: false
-        //   },
-        //   title: {
-        //     text: 'Relative Humidity',
-        //     display: true
-        //   }
-
-        // },
       },
       
     });
@@ -183,14 +143,14 @@ const SpringHourlyAvgTempChart = (props) => {
   return (
 
     // <div class="yrmonchart">
-    <div id="chartbody" class="yrmonchartbody">
+    // <div id="chartbody" class="yrmonchartbody">
       <Line
         id="yrmonchart"
         type='bar'
         data={hour_avg_data}
         options={hour_avg_options}
       />
-    </div>
+    // </div>
 
 
     // </div>

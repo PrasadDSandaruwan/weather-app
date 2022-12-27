@@ -81,11 +81,11 @@ const AutumnHourlyAvgTempChart = (props) => {
         datasets: [
           {
             fill: true, //for area chart
-            borderColor: "#badbad",
+            borderColor: "rgba(255, 116, 47, 1)",
             borderWidth: 3,
-            backgroundColor: "rgba(186, 120, 203, 0.05)",
+            backgroundColor: "rgba(255, 116, 47, 0.6)",
             data: selectData(props.year),
-            label: props.year
+            label: "autumn"
           },
           
         ],
@@ -103,32 +103,12 @@ const AutumnHourlyAvgTempChart = (props) => {
         //   position: "top",
         // },
 
-        zoom: {
-          pan: {
-            enabled: true,
-            mode: 'y'
-          },
-  
-          zoom: {
-            pinch: {
-              enabled: true       // Enable pinch zooming
-            },
-            wheel: {
-              enabled: true,
-              modifierKey: 'ctrl'       // Enable wheel zooming
-            },
-            mode: 'y',
-            drag: {
-              enabled: true,
-            }
-          }
-        }
       },
       scales: {
 
         x: {
           grid: {
-            display: true
+            display:false
           },
           title: {
             text: "Hour",
@@ -147,8 +127,8 @@ const AutumnHourlyAvgTempChart = (props) => {
             text: "Temperature in Degree Celcius",
             display: true
           },
-          max: 21,
-          min: 11
+          max: 26,
+          min: 6
         },
         // "left-y-axis": {
         //   position: "left",
@@ -183,14 +163,14 @@ const AutumnHourlyAvgTempChart = (props) => {
   return (
 
     // <div class="yrmonchart">
-    <div id="chartbody" class="yrmonchartbody">
+    // <div id="chartbody" class="yrmonchartbody">
       <Line
         id="yrmonchart"
         type='bar'
         data={hour_avg_data}
         options={hour_avg_options}
       />
-    </div>
+    // </div>
 
 
     // </div>

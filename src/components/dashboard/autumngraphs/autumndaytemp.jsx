@@ -34,6 +34,7 @@ ChartJS.register(
 var monthdate = []
 var outliermin = []
 var outliermax = []
+
 var temp2016avg = []
 var temp2017avg = []
 var temp2018avg = []
@@ -52,7 +53,7 @@ var temp2018max = []
 var temp2019max = []
 var temp2020max = [] 
 
-d3.csv("/summerdaytemp.csv",function(data1){
+d3.csv("/autumndaytemp.csv",function(data1){
     monthdate.push(data1.monthdate)
     outliermin.push(data1.outliermin)
     outliermax.push(data1.outliermax)
@@ -77,7 +78,7 @@ d3.csv("/summerdaytemp.csv",function(data1){
     
 });
 
-const SummerDayTemperatureChart = (props) => {
+const AutumnDayTemperatureChart = (props) => {
   const [hour_avg_data, set_hour_avg_data] =
     useState({ datasets: [] });
   const [hour_avg_options, set_hour_avg_options] =
@@ -110,47 +111,47 @@ const SummerDayTemperatureChart = (props) => {
         datasets: [
           {
             fill: false, //for area chart
-            borderColor: "rgba(255, 255, 255, 1)",
-            borderWidth: 3,
-            // backgroundColor: "rgba(255, 48, 71, 0.9)",
-            pointRadius: [0],
-            pointHitRadius: [0],
-            data: outliermax,
-            label: "32.42"
-          },
-          {
-            fill: false, //for area chart
-            borderColor: "rgba(0, 0, 0, 1)",
+            borderColor: "rgba(0, 0, 0, 0.9)",
             borderWidth: 3,
             // backgroundColor: "rgba(255, 48, 71, 0.9)",
             pointRadius: [0],
             pointHitRadius: [0],
             data: outliermin,
-            label: "5.49"
+            label: "3.38"
+          },
+          {
+            fill: false, //for area chart
+            borderColor: "rgba(255, 255, 255, 0.9)",
+            borderWidth: 3,
+            // backgroundColor: "rgba(255, 48, 71, 0.9)",
+            pointRadius: [0],
+            pointHitRadius: [0],
+            data: outliermax,
+            label: "26.78"
           },
           {
             fill: true, //for area chart
-            borderColor: "rgba(255, 255, 0, 1)",
+            borderColor: "rgba(255, 167, 71, 0.9)",
             borderWidth: 3,
-            backgroundColor: "rgba(255, 255, 0, 1)",
+            backgroundColor: "rgba(255, 167, 71, 0.9)",
             data: selectData(props.year)[2],
-            label: "min temp",
+            label: "min temp"
           },
           {
             fill: true, //for area chart
-            borderColor: "rgba(255, 156, 0, 1)",
+            borderColor: "rgba(198, 255, 0, 1)",
             borderWidth: 3,
-            backgroundColor: "rgba(255, 156, 0, 1)",
+            backgroundColor: "rgba(198, 255, 0, 1)",
             data: selectData(props.year)[0],
-            label: "avg temp",
+            label: "avg temp"
           },
           {
             fill: true, //for area chart
-            borderColor: "rgba(255, 77, 0, 1)",
+            borderColor: "rgba(255, 48, 71, 0.9)",
             borderWidth: 3,
-            backgroundColor: "rgba(255, 77, 0, 1)",
+            backgroundColor: "rgba(255, 48, 71, 0.9)",
             data: selectData(props.year)[1],
-            label: "max temp",            
+            label: "max temp"
           },
                     
         ],
@@ -164,11 +165,10 @@ const SummerDayTemperatureChart = (props) => {
 
         // title: {
         //   display: true,
-        //   text: "Hourly Average Temperature on a Winter Day in ",
+        //   text: "Hourly Average Temperature on a Autumn Day in ",
         //   position: "top",
         // },
 
-        
       },
       scales: {
 
@@ -177,7 +177,7 @@ const SummerDayTemperatureChart = (props) => {
             display: true
           },
           title: {
-            text: "Summer",
+            text: "Autumn",
             display: true
           },
           //   ticks: {
@@ -246,4 +246,4 @@ const SummerDayTemperatureChart = (props) => {
   );
 };
 
-export default SummerDayTemperatureChart;
+export default AutumnDayTemperatureChart;

@@ -64,12 +64,12 @@ const AutumnHourlyAvgSolarChart = (props) => {
             datasets: [
               {
                 fill: true, //for area chart
-                borderColor: 'rgba(255, 99, 132, 0.5)',
+                borderColor: 'rgba(255, 116, 47, 1)',
                 borderWidth: 3,
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                backgroundColor: 'rgba(255, 116, 47, 0.6)',
                 // backgroundColor: "rgba(186, 120, 203, 0.05)",
                 data: res[year],
-                label: year,
+                label: "autumn",
                 clip: {left: false, right: false, top: false, bottom: false}
               },
               
@@ -101,26 +101,6 @@ const AutumnHourlyAvgSolarChart = (props) => {
         //   position: "top",
         // },
 
-        zoom: {
-          pan: {
-            enabled: true,
-            mode: 'y'
-          },
-  
-          zoom: {
-            pinch: {
-              enabled: true       // Enable pinch zooming
-            },
-            wheel: {
-              enabled: true,
-              modifierKey: 'ctrl'       // Enable wheel zooming
-            },
-            mode: 'y',
-            drag: {
-              enabled: true,
-            }
-          }
-        }
       },
       scales: {
 
@@ -145,7 +125,7 @@ const AutumnHourlyAvgSolarChart = (props) => {
             text: "Surface Solar Radiation in W/m2",
             display: true
           },
-          max: 600,
+          max: 1000,
           min: 0
         },
         
@@ -160,14 +140,14 @@ const AutumnHourlyAvgSolarChart = (props) => {
   return (
 
     // <div class="yrmonchart">
-    <div id="chartbody" class="yrmonchartbody">
+    // <div id="chartbody" class="yrmonchartbody">
       <Bubble
         id="yrmonchart"
         type='bar'
         data={hour_avg_data}
         options={hour_avg_options}
       />
-    </div>
+    // </div>
 
 
     // </div>
