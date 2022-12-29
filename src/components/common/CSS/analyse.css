@@ -20,3 +20,9 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.forecast-image {
+  background: url("../../../../public/f1.jpeg") center;
+  background-repeat: no-repeat;
+  background-size: 90% 90%;
+}

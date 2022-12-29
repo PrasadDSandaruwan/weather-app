@@ -9,9 +9,31 @@ import {
   getCurrentData,
   getMinMax,
   getWeekdays,
+  getPrediction,
 } from "../../service/forecastService";
 
 const Forecast = (props) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading2, setIsLoading2] = useState(true);
+  const [isLoading3, setIsLoading3] = useState(true);
+
+  const [all_data, set_all_data] = useState({
+    dates: [],
+    huminidy: [],
+    solar_radiation: [],
+    temperature: [],
+  });
+
+  useEffect(() => {
+    setIsLoading3(true);
+    async function fetchCurrentWeatherData() {
+      let cur_weather = await getPrediction();
+      set_all_data(cur_weather);
+      setIsLoading3(false);
+    }
+    fetchCurrentWeatherData().catch(console.error);
+  }, []);
+
   const [current_weather, set_current_weather] = useState({
     date: "",
     huminidy: "",
@@ -25,9 +47,6 @@ const Forecast = (props) => {
     Max: "",
     Avg: "",
   });
-
-  const [isLoading, setIsLoading] = useState(true);
-  const [isLoading2, setIsLoading2] = useState(true);
 
   const [week_days, set_week_days] = useState([]);
 
@@ -55,20 +74,19 @@ const Forecast = (props) => {
     fetchMinMax().catch(console.error);
   }, []);
 
-  // useEffect(() => {
-
-  //   async function fetchWeekDays() {
-  //     let res = await getWeekdays();
-  //     console.log("RES", res);
-  //     set_week_days(res);
-  //   }
-  //   fetchWeekDays().catch(console.error);
-  // }, []);
+  useEffect(() => {
+    async function fetchWeekDays() {
+      let res = await getWeekdays();
+      console.log("RES", res);
+      set_week_days(res);
+    }
+    fetchWeekDays().catch(console.error);
+  }, []);
 
   return (
     <React.Fragment>
       <AdminNavbar />
-      {isLoading && isLoading2 && (
+      {isLoading && isLoading2 && isLoading3 && (
         <div
           className=" vh-100 d-flex justify-content-center align-items-center"
           style={{ zIndex: 50, position: "relative" }}
@@ -77,7 +95,7 @@ const Forecast = (props) => {
         </div>
       )}
 
-      {!isLoading && !isLoading2 && (
+      {!isLoading && !isLoading2 && !isLoading3 && (
         <>
           <div
             style={{ marginTop: "100px", marginBottom: "50px" }}
@@ -106,7 +124,7 @@ const Forecast = (props) => {
                     style={{ fontSize: "2.5em" }}
                     className="text-white font-weight-bold ml=3"
                   >
-                    {current_weather.temperature} C
+                    {current_weather.temperature} C<sup>o</sup>
                   </span>
                   <span
                     style={{
@@ -206,14 +224,14 @@ const Forecast = (props) => {
               className="container text-center justify-content-center mx-auto"
             >
               <div className="font-weight-bold" style={{ fontSize: "2em" }}>
-                Daily Forecast
+                Seven Day Forecast
               </div>
               <div style={{ height: "300px" }}>
-                <ForecastChart></ForecastChart>
+                <ForecastChart all_data={all_data}></ForecastChart>
               </div>
               <div
                 className="row text-center content-center"
-                style={{ paddingLeft: "37px", paddingRight: "37px" }}
+                style={{ paddingLeft: "67px", paddingRight: "37px" }}
               >
                 {week_days.map((item) => (
                   <div

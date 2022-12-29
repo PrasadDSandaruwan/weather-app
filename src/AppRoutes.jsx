@@ -28,18 +28,25 @@ export class AppRoutes extends Component {
               </ProtectedRoute>
             }
           />
+
+          <Route
+            path="/upload-dataset"
+            element={
+              <ProtectedRoute>
+                <UploadCSV />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/auth" element={<Login />} />
-          <Route path="/upload-dataset" element={<UploadCSV />} />
-          <Route path="/" element={<Home></Home>}></Route>
 
           <Route path="/seasonal" element={<DashboardContent />} />
           <Route path="/forecast" element={<Forecast />} />
 
           <Route path="/logout" element={<Logout />} />
 
-          <Route path="/decomposed" element={<DecomposedContent/>} />
+          <Route path="/decomposed" element={<DecomposedContent />} />
           <Route path="/dashboard" element={<MainDashboard />} />
-
+          <Route path="/" element={<Home></Home>}></Route>
         </Routes>
       </BrowserRouter>
     );

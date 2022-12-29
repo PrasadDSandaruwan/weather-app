@@ -15,7 +15,9 @@ const AdminNavbar = (props) => {
           <div className="container ">
             <div className="row w-100">
               <div class="logo col-3">
-                <Logo></Logo>
+                <NavLink to="/">
+                  <Logo></Logo>
+                </NavLink>
               </div>
 
               <div class="collapse navbar-collapse col-6" id="navbarNav">
@@ -38,7 +40,7 @@ const AdminNavbar = (props) => {
                         </NavLink>
                       </li>
                       <li class="nav-item nav-link">
-                        <NavLink class="nav-link" to="/">
+                        <NavLink class="nav-link" to="/upload-dataset">
                           <span className="text-white">Add Dataset</span>
                         </NavLink>
                       </li>

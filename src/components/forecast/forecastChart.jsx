@@ -53,20 +53,22 @@ const options = {
 };
 
 const ForecastChart = (props) => {
-  const [all_data, set_all_data] = useState({
-    dates: [],
-    huminidy: [],
-    solar_radiation: [],
-    temperature: [],
-  });
+  // const [all_data, set_all_data] = useState({
+  //   dates: [],
+  //   huminidy: [],
+  //   solar_radiation: [],
+  //   temperature: [],
+  // });
 
-  useEffect(() => {
-    async function fetchCurrentWeatherData() {
-      let cur_weather = await getPrediction();
-      set_all_data(cur_weather);
-    }
-    fetchCurrentWeatherData().catch(console.error);
-  }, []);
+  // useEffect(() => {
+  //   async function fetchCurrentWeatherData() {
+  //     let cur_weather = await getPrediction();
+  //     set_all_data(cur_weather);
+  //   }
+  //   fetchCurrentWeatherData().catch(console.error);
+  // }, []);
+
+  const all_data = props.all_data;
 
   return (
     <Line
@@ -77,8 +79,8 @@ const ForecastChart = (props) => {
           {
             label: "Temperature",
             data: all_data.temperature,
-            borderColor: "rgb(255, 99, 132)",
-            backgroundColor: "rgba(255, 99, 132, 0.5)",
+            borderColor: "rgb(252, 5, 5)",
+            backgroundColor: "rgba(252, 5, 5, 0.5)",
             yAxisID: "y",
           },
           {
@@ -91,9 +93,9 @@ const ForecastChart = (props) => {
           {
             label: "solar radiation",
             data: all_data.solar_radiation,
-            borderColor: "rgb(240, 112, 0)",
-            backgroundColor: "rgba(240, 112, 0, 0.5)",
-            yAxisID: "y",
+            borderColor: "rgb(89, 80, 60,)",
+            backgroundColor: "rgba(89, 80, 60, 0.5)",
+            yAxisID: "y3",
           },
         ],
       }}

@@ -28,7 +28,9 @@ const HomeNavbar = (props) => {
       >
         <div className="container">
           <div class="logo">
-            <Logo></Logo>
+            <NavLink to="/">
+              <Logo></Logo>
+            </NavLink>
           </div>
 
           <div class="collapse navbar-collapse" id="navbarNav">
@@ -52,7 +54,7 @@ const HomeNavbar = (props) => {
                     </NavLink>
                   </li>
                   <li class="nav-item nav-link">
-                    <NavLink class="nav-link" to="/">
+                    <NavLink class="nav-link" to="/upload-dataset">
                       <span className="text-white">Add Dataset</span>
                     </NavLink>
                   </li>

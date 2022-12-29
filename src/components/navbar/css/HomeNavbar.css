@@ -16,7 +16,7 @@
 .home-image {
   height: 100vh;
   /* margin-top: -45px; */
-  background: url("../../../../public/homepage.jpg") center no-repeat;
+  background: url("../../../../public/h1.png") center no-repeat;
   z-index: 0;
 }
 
@@ -48,13 +48,13 @@
 }
 
 .tw-text-main {
-  color: yellow;
+  color: rgb(17, 0, 255);
   font-size: 30px;
   font-weight: bolder;
 }
 
 .tw-text {
-  color: red;
+  color: rgb(0, 0, 0);
   font-size: 20px;
   font-weight: bold;
 }
