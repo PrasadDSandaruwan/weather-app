@@ -60,7 +60,7 @@ function MainDashboard() {
                     {/* row 2 */}
                     <Grid item xs={12} md={12} lg={6}>
 
-                        <iframe title="maindash - Page 1" width="1300" height="630" align="left"
+                        <iframe title="maindash - Page 1" width="1400" height="675" align="left" 
                             src="https://app.powerbi.com/view?r=eyJrIjoiZmVkNDY2MDAtMWQyNC00N2M4LTlmZDMtODk4ZjA1ZDlmMTRkIiwidCI6ImFhYzBjNTY0LTZjNWUtNGIwNS04ZGMzLTQwODA4N2Y3N2Y3NiIsImMiOjEwfQ%3D%3D"
                             frameborder="0" allowFullScreen="true">
                         </iframe>

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Admin from "../../layouts/Admin";
 import { addUser } from "../../service/userService";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SignUp = (props) => {
   const [inputs, setInputs] = useState({});
@@ -21,8 +23,13 @@ const SignUp = (props) => {
       password: inputs.password,
     };
     try {
-      const response = addUser(data);
+      const response = await addUser(data);
+      console.log(response)
+      toast.success(response.data.success)
     } catch (error) {
+      // toast.error(error.data.error)
+      console.log(error)
+      toast.error(error.response.data.error)
       // TODO
     }
 
@@ -31,6 +38,7 @@ const SignUp = (props) => {
 
   return (
     <Admin>
+      <ToastContainer autoClose={5000} hideProgressBar={true} />
       <div className="min-vh-100 d-flex justify-content-center align-items-center">
         <div style={{ height: "auto", width: "650px" }}>
           <form>

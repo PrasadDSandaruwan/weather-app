@@ -48,7 +48,7 @@ function DecomposedContent() {
                     container
                     rowSpacing={1.5}
                     columnSpacing={5}
-                    paddingLeft={5}
+                    paddingLeft={15}
                     paddingRight={2}
                     paddingBottom={5}
                 >

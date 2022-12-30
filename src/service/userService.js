@@ -13,7 +13,7 @@ export async function addUser(data) {
   const response = await http.post(apiEndPoint, data, {
     headers: {
       token: `${Auth.getJwt()}`,
-      "Content-Type": "multipart/form-data",
+      "Content-Type": "application/json",
     },
   });
 

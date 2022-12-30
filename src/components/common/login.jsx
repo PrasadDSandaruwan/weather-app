@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 
 import { login, loginWithJwt } from "../../service/authService";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = (props) => {
   const [inputs, setInputs] = useState({});
@@ -16,7 +18,7 @@ const Login = (props) => {
     event.preventDefault();
     try {
       const response = await login(inputs.email, inputs.password);
-      if (response.status == 200) {
+      if (response.status === 200) {
         const token = response.data.access_token;
         console.log(response);
         loginWithJwt(token, "");
@@ -26,11 +28,13 @@ const Login = (props) => {
       }
     } catch (error) {
       console.log("error", error);
+      toast.error(error.response.data.message)
     }
   };
 
   return (
     <div className="vh-100 d-flex justify-content-center align-items-center">
+      <ToastContainer autoClose={5000} hideProgressBar={true} />
       <div style={{ height: "300px", width: "250px" }}>
         <form>
           <div className="text-center">
