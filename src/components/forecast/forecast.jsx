@@ -219,19 +219,19 @@ const Forecast = (props) => {
             className="container text-center justify-content-center mx-auto"
             style={{ marginBottom: "20px" }}
           >
-            <div
-              style={{ width: "75%" }}
-              className="container text-center justify-content-center mx-auto"
-            >
+            <div className="container text-center justify-content-center mx-auto">
               <div className="font-weight-bold" style={{ fontSize: "2em" }}>
                 Seven Day Forecast
               </div>
-              <div style={{ height: "300px" }}>
+              <div
+                style={{ height: "300px", width: "1000px" }}
+                className="container text-center justify-content-center mx-auto"
+              >
                 <ForecastChart all_data={all_data}></ForecastChart>
               </div>
               <div
                 className="row text-center content-center"
-                style={{ paddingLeft: "67px", paddingRight: "37px" }}
+                style={{ paddingLeft: "175px", paddingRight: "125px" }}
               >
                 {week_days.map((item) => (
                   <div

@@ -56,6 +56,7 @@ const SignUp = (props) => {
                   placeholder="Enter email"
                   value={inputs.first_name || ""}
                   onChange={handleChange}
+                  required
                 />
               </div>
 
@@ -68,6 +69,7 @@ const SignUp = (props) => {
                   placeholder="Enter email"
                   value={inputs.last_name || ""}
                   onChange={handleChange}
+                  required
                 />
               </div>
             </div>
@@ -81,6 +83,7 @@ const SignUp = (props) => {
                 placeholder="Enter email"
                 value={inputs.email || ""}
                 onChange={handleChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -92,6 +95,7 @@ const SignUp = (props) => {
                 placeholder="Enter password"
                 value={inputs.password || ""}
                 onChange={handleChange}
+                required
               />
             </div>
 

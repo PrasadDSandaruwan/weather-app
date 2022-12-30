@@ -40,6 +40,10 @@ const options = {
       type: "linear",
       display: true,
       position: "left",
+      title: {
+        display: true,
+        text: "Temperature",
+      },
     },
     y1: {
       type: "linear",
@@ -47,6 +51,22 @@ const options = {
       position: "right",
       grid: {
         drawOnChartArea: false,
+      },
+      title: {
+        display: true,
+        text: "Relative Humidity",
+      },
+    },
+    y3: {
+      type: "linear",
+      display: true,
+      position: "left",
+      grid: {
+        drawOnChartArea: false,
+      },
+      title: {
+        display: true,
+        text: "Solar radiation",
       },
     },
   },
