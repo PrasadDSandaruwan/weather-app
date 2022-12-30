@@ -26,11 +26,9 @@ import AdminNavbar from "../navbar/AdminNavbar";
 
 function MainDashboard() {
 
-    const [year, setYear] = useState("hoursolar");
-
     return (
         <>
-            <AdminNavbar/>
+            <AdminNavbar />
             <Box component="main" sx={{ flex: 1, py: 6, px: 4, pt: 3, pb: 3 }} style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}>
                 {/* style={{backgroundColor:"black"}} */}
                 <Typography
@@ -38,8 +36,8 @@ function MainDashboard() {
                     component="h4"
                     variant="h4"
                     // marginBottom={3}
-                    marginTop={5}
-                    marginBottom = {4}
+                    marginTop={6}
+                    marginBottom={4}
                     align="center"
                     color="rgba(255, 255, 255, 1)"
                 >
@@ -64,7 +62,7 @@ function MainDashboard() {
 
                         <iframe title="maindash - Page 1" width="1300" height="630" align="left"
                             src="https://app.powerbi.com/view?r=eyJrIjoiZmVkNDY2MDAtMWQyNC00N2M4LTlmZDMtODk4ZjA1ZDlmMTRkIiwidCI6ImFhYzBjNTY0LTZjNWUtNGIwNS04ZGMzLTQwODA4N2Y3N2Y3NiIsImMiOjEwfQ%3D%3D"
-                            frameborder="0" allowFullScreen="true">                        
+                            frameborder="0" allowFullScreen="true">
                         </iframe>
 
                         {/* <MainCard

@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 
 // import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
 // import HomeNavbar from "../navbar/HomeNavbar";
-import User from "../../layouts/User";
 import MainCard from "./MainCard";
 
 import {
@@ -25,12 +24,13 @@ import DecomposedTemperatureChart from "./decomposedgraphs/decomtemp";
 import DecomposedRelativeHumidityChart from "./decomposedgraphs/decomrelhum";
 import DecomposedPressureChart from "./decomposedgraphs/decompress";
 import DecomposedSolarRadiationChart from "./decomposedgraphs/decomsolar";
+import AdminNavbar from "../navbar/AdminNavbar";
 
 function DecomposedContent() {
 
     return (
         <>
-            <User />
+            <AdminNavbar />
             <Box component="main" sx={{ flex: 1, py: 6, px: 4, pt: 3, pb: 3 }} style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}>
                 {/* style={{backgroundColor:"black"}} */}
                 <Typography
