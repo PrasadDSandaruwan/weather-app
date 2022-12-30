@@ -4,6 +4,8 @@ import { ToastContainer, toast } from "react-toastify";
 import FadeLoader from "react-spinners/FadeLoader";
 
 import { login, loginWithJwt } from "../../service/authService";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = (props) => {
   const [inputs, setInputs] = useState({});
@@ -20,8 +22,11 @@ const Login = (props) => {
     setIsLoading(true);
     try {
       const response = await login(inputs.email, inputs.password);
+
       setIsLoading(false);
-      if (response.status == 200) {
+
+      if (response.status === 200) {
+
         const token = response.data.access_token;
 
         console.log(response);
@@ -34,10 +39,12 @@ const Login = (props) => {
     } catch (error) {
       setIsLoading(false);
       console.log("error", error);
+      toast.error(error.response.data.message)
     }
   };
 
   return (
+
     <>
       {isLoading && (
         <div
@@ -54,6 +61,7 @@ const Login = (props) => {
               <div className="text-center">
                 <h3>Sign In</h3>
               </div>
+
 
               <div className="mb-3">
                 <label>Email address</label>

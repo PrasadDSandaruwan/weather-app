@@ -21,6 +21,7 @@ const AdminNavbar = (props) => {
               </div>
 
               <div class="collapse navbar-collapse col-7" id="navbarNav">
+
                 <ul class="navbar-nav">
                   <li class="nav-item nav-link">
                     <NavLink class="nav-link" to="/dashboard">

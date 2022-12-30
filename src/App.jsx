@@ -1,12 +1,18 @@
+
 import "./App.css";
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div className="App">
+      <ToastContainer autoClose={5000} hideProgressBar={true} />
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" className="logo" alt="Vite logo" />

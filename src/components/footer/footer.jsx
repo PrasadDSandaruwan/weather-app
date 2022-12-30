@@ -21,10 +21,9 @@ function Footer() {
                   </figure>
                   <div class="text">
                     <p>
-                      We analyze and forecast weather. [fill] g elit sed eiusm
-                      tempor incididunt ut labore dolore magna aliqua enim ad
-                      minim veniam quis.nostrud exercita.laboris nisi ut aliquip
-                      ea commodo conse quatuis aute irure.
+                      We provide elaborate weather analysis 
+                      and weather forecast services for
+                      Clayton, Victoria, Australia.
                     </p>
                   </div>
                   {/* <ul class="footer-social">
@@ -56,7 +55,7 @@ function Footer() {
                   <div class="footer-title">Services</div>
                   <ul class="list">
                     <li>
-                      <Link to="#">Weather Data analysing</Link>
+                      <Link to="#">Weather Data Analysis</Link>
                     </li>
                     <li>
                       <Link to="#">Weather Forecasting</Link>

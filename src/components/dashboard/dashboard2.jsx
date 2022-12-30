@@ -48,7 +48,7 @@ function DashboardContent() {
                     container
                     rowSpacing={1.5}
                     columnSpacing={5}
-                    paddingLeft={5}
+                    paddingLeft={10}
                     paddingRight={2}
                     paddingBottom={5}
                 >
@@ -67,7 +67,7 @@ function DashboardContent() {
                         > */}
 
                             {/* <Grid item> */}
-                                <Stack direction="row" alignItems="center" spacing={1} style={{ marginLeft: "120px", marginTop: "30px" }}>
+                                <Stack direction="row" alignItems="center" spacing={1} style={{ marginLeft: "175px", marginTop: "30px" }}>
                                 <Button className="mainbtn"
                                         size="large"
                                         onClick={() => setYear("hoursolar")}
